@@ -1,0 +1,95 @@
+.back {
+	background-color: #DCF0F7;
+}
+
+.body {
+	color:#5F6B61;
+	padding: 2mm 3mm;
+	font-variant: normal;
+	font-size: 12px;
+	text-align: left;
+}
+
+.header {
+	color: #5E9DC8;
+	padding-top: 2mm;
+	padding-bottom: 2mm;
+	font-size: 16px;
+	font-style: oblique;
+	font-weight: 900;
+	text-align: center;
+	background-color: #0C2C52;
+}
+
+.contentHeader{
+	padding: 1cm 5mm 5mm;
+	font-size: 18px;
+}
+
+.li {
+	color:#5F6B61;
+}
+
+.p {
+	color: #5F6B61;
+	margin: 1px;
+	padding: 1px;
+	text-indent: 1cm;
+}
+
+.tableouter {
+	text-align: center;
+	background-color: #000000;
+}
+
+.tableinner {
+	background-color:#DCF0F7;
+}
+
+.th{
+	color:#5F6B61;
+	background-color:#DCF0F7;
+	padding: 3px;
+}
+
+.td{
+	margin-top: 2px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-top: 1mm;
+	padding-right: 3mm;
+	padding-left: 3mm;
+}
+
+.ul {
+	color:#5F6B61;
+}
+
+.a{
+	color: #5F6B61;
+	text-decoration:underline;
+}
+
+a:active {
+	color:#0C2C52;
+	text-decoration:underline;
+}
+
+a:hover {
+	color:#0C2C52;
+	text-decoration:underline;
+}
+
+a:link {
+	color:#5E9DC8;
+	text-decoration:none;
+}
+
+a:visited {
+	color:#0C2C52;
+	text-decoration:none;
+}
+.table_pad {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
