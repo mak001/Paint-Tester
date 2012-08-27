@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<LINK REL=StyleSheet HREF="style.css" TYPE="text/css">
+	</head>
+	<body class="back">
+		<div class="header">Coding help<a name="top"></a></div>
+		<div class = "body">
+			<table cellpadding="0" cellspacing="1" class="tableouter">
+				<tr>
+					<th class="th">Contents</th>
+				</tr>
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" class="tableinner">
+							<tr>
+								<td class="td">
+									<a href="#class_missing" class="a">Classes missing?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td">
+									<a href="#graphics_help" class="a">Graphics help</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td">
+									<a href="#graphics2D" class="a">Graphics2D</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td">
+									<a href="#antialiasing" class="a">Antialiasing</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="td">
+									<a href="#tuts" class="a">Tutorials</a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="contentHeader">
+				<a name="class_missing">Some classes missing?</a>
+			</div>
+			<p class="p"> If a class is not provided that you want included i could put it in. These are some exceptions though: 
+			</p>
+			<ul class="ul">
+				<li class="li">NPCs</li>
+				<li class="li">GameObjects</li>
+				<li class="li">Tiles</li>
+				<li class="li">Widgets</li>
+				<li class="li">Anything else that cannot be imitated without loading and hacking rs</li>
+			</ul>
+			
+			<div class="contentHeader">
+				<a name="graphics_help">Not sure about Graphics?</a>
+			</div>
+			<p class="p">The <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html">Graphics class (java.awt.Graphics)</a> offers methods to draw lines and shapes onto a canvas (the RuneScape game screen in this case). 
+			Many of the common ones used in paints are <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#drawString(java.lang.String, int, int)">drawString(String, int, int)</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#drawLine(int, int, int, int)">drawLine(int, int, int, int)</a> and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#setColor(java.awt.Color)">setColor(Color)</a>.
+			</p>
+			<p class="p">
+			There are some basic classes that are used when creating a simple paint. Some of these are <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Color.html">Color</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html">Graphics2D</a> (explained later), and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/BasicStroke.html">BasicStroke</a>.
+			</p>
+			
+			<div class="contentHeader">
+				<a name="graphics2D">About Graphics2D</a>
+			</div>
+			<p class="p"> 
+			The <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html">Graphics2D class (java.awt.Graphics2D)</a> is like the Graphics class, but has a couple new methods. These methods can be helpful in making text and shapes smooth (called Antialiasing), giving lines and shapes' outer edges thickness(using BasicStoke), scale and rotate the entire paint (not covered in this help page, google it).
+			</p>
+			<p class="p"> 
+			Many people automatically make the Graphics object that was passed in the onRepaint method into a Graphics2D object. This is how you do it: 
+			</p>
+			
+			<div class="table_pad">
+				<table cellpadding="0" cellspacing="1" class="tableouter">
+					<tr>
+						<td>
+							<table cellpadding="0" cellspacing="0" class="tableinner">
+								<tr>
+									<td class="td">
+										public void onRepaint(Graphics g1) {<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphics2D g = (Graphics2D) g1;<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.(insert method here);<br />
+										}
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p class="p"> 
+			As you can see all it that was done was casting a Graphics object to a Graphcis2D object.  (If you have no clue what casting is, google it, it is very useful)
+			</p>
+			
+			<div class="contentHeader">
+				<a name="antialiasing">About Antialiasing</a>
+			</div>
+			<p class="p"> 
+			As said in the Graphics2D section, antialiasing is used to make lines, shapes and text smooth. This will only work with a Graphics2D object, meaning if you try and do this with the normal Graphics object it will give you errors.
+			</p>
+			
+			<div class="table_pad">
+				<table cellpadding="0" cellspacing="1" class="tableouter">
+					<tr>
+						<td>
+							<table cellpadding="0" cellspacing="0" class="tableinner">
+								<tr>
+									<td class="td">
+										public void onRepaint(Graphics g1) {<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphics2D g = (Graphics2D) g1;<br />
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,<br />
+                        					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RenderingHints.VALUE_ANTIALIAS_ON);<br />
+										}
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<p class="p">
+			You may be asking, "This must be more complicated, where is the rest?". Simply put, there is no more to it. Once the Graphics2D object has a <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/RenderingHints.html">Rendering Hint</a> is set it will automatically use that rendering hint.
+			</p>
+			
+			<div class="contentHeader">
+				<a name="tuts">Tutorials</a>
+			</div>
+			<p class="p"> Most of these tutorials were not made by me.
+			</p>
+			<ul class="ul">
+				<li class="li"><a href="http://www.powerbot.org/community/topic/534450-tut-how-to-create-and-make-your-paint-with-pics-tut/">How to create and make your Paint [WITH PICS] - by: Ridiculousness</a></li>
+				<li class="li"><a href="http://runedream.org/community/showthread.php/1408-Tut-checkbox-and-more-paint-tutorial-Tut">Checkbox and more - by: mak001</a></li>
+				
+			</ul>
+			
+		</div>
+	</body>
+</html>
