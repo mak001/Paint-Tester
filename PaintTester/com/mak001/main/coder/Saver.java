@@ -83,7 +83,7 @@ public class Saver {
 					}
 
 					for (CodeTab ct : GlobalVariables.codeTabs) {
-						ct.reload();
+						ct.getFileContents();
 						Compiler.compile(ct);
 					}
 				} else {
@@ -168,7 +168,7 @@ public class Saver {
 			GlobalVariables.currentPaintBase = null;
 
 			for (CodeTab ct : GlobalVariables.codeTabs) {
-				ct.reload();
+				ct.getFileContents();
 				Compiler.compile(ct);
 			}
 

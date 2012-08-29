@@ -26,9 +26,9 @@ public class Loader {
 				GlobalVariables.clearClasses();
 				for (CodeTab t : GlobalVariables.codeTabs) {
 					Compiler.compile(t);
-					Object[] o = t.reload();
-					if ((Boolean) o[0] == true) {
-						t.setTextContents((String) o[1]);
+					String s = t.getFileContents();
+					if (s!=null) {
+						t.setTextContents(s);
 					}
 				}
 				System.gc();
